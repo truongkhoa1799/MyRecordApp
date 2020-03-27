@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.example.dailyapp.ui.home.HomeFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            android:id="@+id/action_navigation_home_to_moneyRecordFragment"
+            app:destination="@id/navigation_money_record" />
+        <action
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            android:id="@+id/action_navigation_home_to_oilRecordFragment"
+            app:destination="@id/oilRecordFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_dashboard"
+        android:name="com.example.dailyapp.ui.dashboard.DashboardFragment"
+        android:label="@string/title_dashboard"
+        tools:layout="@layout/fragment_dashboard" >
+        <action
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            android:id="@+id/action_navigation_dashboard_to_historyFragement"
+            app:destination="@id/historyFragement" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_notifications"
+        android:name="com.example.dailyapp.ui.notifications.NotificationsFragment"
+        android:label="@string/title_notifications"
+        tools:layout="@layout/fragment_notifications" />
+    <fragment
+        android:id="@+id/navigation_money_record"
+        android:name="com.example.dailyapp.ui.moneyrecord.moneyRecordFragment"
+        android:label="Money Record"
+        tools:layout="@layout/fragment_money_record" >
+    </fragment>
+
+    <fragment
+        android:id="@+id/oilRecordFragment"
+        android:name="com.example.dailyapp.ui.oilRecord.oilRecordFragment"
+        android:label="Oil Record"
+        tools:layout="@layout/fragment_oil_record" />
+    <fragment
+        android:id="@+id/historyFragement"
+        android:name="com.example.dailyapp.ui.dashboard.History.HistoryFragement"
+        android:label="history_fragement_fragment"
+        tools:layout="@layout/history_fragement_fragment" />
+
+</navigation>
